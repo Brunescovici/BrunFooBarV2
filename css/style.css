@@ -1,0 +1,227 @@
+:root {
+  --main-color: #576CD9;
+  --shadow-color: #222;
+  --button-text-color: #F8F8F8;
+  --photo-line-color: rgba(0,0,0,.3);
+  --critically-text: #FF0000;
+  --critically-background: rgba(255, 0, 0, 0.2);
+  --low-text: #FFA200;
+  --low-background: rgba(255, 162, 0, 0.2);
+  --stock-text: #4BA100;
+  --stock-background: rgba(119, 255, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ===== Containers Styling ===== */
+.titleForContainer {
+  font-weight: bold;
+  font-size: 37px;
+  float: left;
+  margin-left: 20px;
+}
+.containersBox {
+  border-bottom: 5px solid var(--main-color);
+  border-radius: 20px;
+  margin: 20px;
+  padding: 30px;
+  box-shadow: 0 3px 10px var(--shadow-color);
+}
+.seeAllButton{
+  background-color: var(--main-color);
+  border-radius: 20px;
+  padding: 7px 15px 7px 15px;
+  color: var(--button-text-color);
+  font-size: 16px;
+  float: right;
+}
+
+
+
+/* ===== Bartenders Styling ===== */
+.contentBartenders {
+  font-size: 16px;
+  margin-top: 50px;
+  display: table;
+  border-collapse: collapse;
+}
+.bartendersRow {
+  display: table-row;
+
+}
+.bartendersCell {
+  display:table-cell;
+  width:33%;
+  padding:10px;
+  text-align: center;
+  vertical-align: middle;
+  align-content: center;
+}
+
+/* Numbers */
+.bartenderNumber {
+  font-weight: bold;
+  font-size: 35px;
+}
+
+/* Photos */
+.photoBartender {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid var(--shadow-color);
+
+}
+.photoContainer {
+  border-left: 2px solid var(--photo-line-color);
+  border-right: 2px solid var(--photo-line-color);
+}
+/* Names */
+.nameAndAction {
+
+}
+.name {
+  font-weight: bold;  /* idk about this */
+  font-size: 35px;
+  text-align: left;
+}
+.action {
+  font-style: italic;
+  font-size: 20px;
+}
+
+/* IDs for tests */
+#photo1 {
+  background-color: green;
+}
+#photo2 {
+  background-color: purple;
+}
+#photo3 {
+  background-color: red;
+}
+
+/* Container IDs for individual styling */
+#bartenderContainer {
+  margin-left: 300px;
+  width: 700px;
+  height: 400px;
+}
+#storageContainer {
+  width: 700px;
+  height: 400px;
+}
+
+/* ===== Storage Styling ===== */
+
+.tableContent {
+  margin-top: 100px;
+}
+
+.storageTable {
+  width: 100%;
+  border-collapse: collapse;
+  padding: 5px;
+  border-bottom: 2px solid var(--photo-line-color);
+
+}
+.storageTable thead {
+  font-size: 25px;
+}
+.storageTable th {
+  padding: 5px;
+}
+.storageTable td {
+  border-top: 2px solid var(--photo-line-color);
+  text-align: center;
+  padding: 5px;
+}
+.productClass {
+  font-size: 30px;
+  text-align: left !important;
+}
+.productNameTitle {
+  text-align: left !important;
+
+}
+.quantityClass {
+  font-size: 30px;
+
+}
+.statusClass {
+  font-size: 20px;
+  font-weight: bold;
+}
+.statusArea {
+  border-radius: 30px;
+  padding: 3px 10px 3px 10px;
+  width: 150px;
+  margin: auto;
+}
+.criticallyLow {
+  color: var(--critically-text);
+  background-color: var(--critically-background);
+}
+.lowStock {
+  color: var(--low-text);
+  background-color: var(--low-background);
+}
+.onStock {
+  color: var(--stock-text);
+  background-color: var(--stock-background);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Remaining Tap Styling ===== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Orders Styling ===== */
+
+
+
+
+
+
+
+
+/* ===== Align containers ===== */
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}

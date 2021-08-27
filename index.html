@@ -17,9 +17,141 @@
                 <li></li>
             </ul>
         </nav>
-        <div id="bartenderContainer">
-            <p>hello</p>
+
+
+        <!-- ===== Bartenders View  ===== -->
+        <div class="containersBox left" id="bartenderContainer">
+            <div class="titleAndButton">
+                <p class="titleForContainer">Bartenders</p>
+                <button id="bartendersButton" class="seeAllButton" type="button" name="button">See all</button>
+            </div>
+
+            <div class="contentBartenders">
+
+                <div class="bartendersRow">
+                    <div class="bartendersCell">
+                        <p class="bartenderNumber">#1</p>
+                    </div>
+                    <div class="bartendersCell">
+                        <div class="photoContainer">
+                            <div class="photoBartender" id="photo1">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bartendersCell">
+                        <div class="nameAndAction">
+                            <p class="name">Peter</p>
+                            <p class="action">Pouring beer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bartendersRow">
+                    <div class="bartendersCell">
+                        <p class="bartenderNumber">#2</p>
+                    </div>
+                    <div class="bartendersCell">
+                        <div class="photoContainer">
+                            <div class="photoBartender" id="photo2">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bartendersCell">
+                        <div class="nameAndAction">
+                            <p class="name">Jonas</p>
+                            <p class="action">Pouring beer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bartendersRow">
+                    <div class="bartendersCell">
+                        <p class="bartenderNumber">#3</p>
+                    </div>
+                    <div class="bartendersCell">
+                        <div class="photoContainer">
+                            <div class="photoBartender" id="photo3">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bartendersCell">
+                        <div class="nameAndAction">
+                            <p class="name">Dannie</p>
+                            <p class="action">Pouring beer</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
+
+        <!-- ===== Storage View  ===== -->
+        <div class="containersBox right" id="storageContainer">
+            <div class="titleAndButton">
+                <p class="titleForContainer">Storage</p>
+                <button id="storageButton" class="seeAllButton" type="button" name="button">See all</button>
+            </div>
+
+
+            <div class="tableContent">
+                <table class="storageTable">
+                    <thead>
+                	<tr>
+                        <th class="productNameTitle">Product name</th>
+                		<th>Quantity</th>
+                		<th>Status</th>
+                	</tr>
+                	</thead>
+                	<tbody>
+                	<tr id="row0">
+                		<td class= "productClass" id="product0">"El Hefe"</td>
+                		<td class="quantityClass" id="quantity0">1</td>
+                		<td class="statusClass">
+                            <p class="criticallyLow statusArea" id="status0">Critically Low</p>
+                        </td>
+                	</tr>
+                	<tr id="row1">
+                		<td class= "productClass" id="product1">"Fairy Tale Ale"</td>
+                		<td class="quantityClass" id="quantity1">3</td>
+                		<td class="statusClass">
+                            <p class="lowStock statusArea" id="status1">Low Stock</p>
+                        </td>
+                	</tr>
+                	<tr id="row2">
+                		<td class= "productClass" id="product2">"GitHop"</td>
+                		<td class="quantityClass" id="quantity2">6</td>
+                		<td class="statusClass">
+                            <p class="onStock statusArea" id="status2">On Stock</p>
+                        </td>
+                	</tr>
+                	<tr id="row3">
+                		<td class= "productClass" id="product3">"Hollaback Lager"</td>
+                		<td class="quantityClass" id="quantity3">8</td>
+                		<td class="statusClass">
+                            <p class="onStock statusArea" id="status3">On Stock</p>
+                        </td>
+                	</tr>
+                	<tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!-- ===== Remaining Tap View  ===== -->
+        <!-- <div class="containersBox" id="remainingTapContainer">
+            <p class="titleForContainer">Remaining Tap</p>
+        </div> -->
+
+        <!-- ===== Orders View  ===== -->
+        <!-- <div class="containersBox" id="ordersContainer">
+            <p class="titleForContainer">Orders</p>
+        </div> -->
+
+
     </main>
 </body>
 <script src="script.js"></script>
