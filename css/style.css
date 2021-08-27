@@ -1,0 +1,61 @@
+
+
+:root {
+    --main-color: #576CD9;
+    --shadow-color: #222;
+}
+
+* {
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+/* ==== Navigation Bar Styling ==== */
+
+#navigationBar {
+    background-color: var(--main-color);
+    position: relative;
+    width: 14vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: left;
+}
+
+#navigationBar h1, ul {
+    position: relative;
+    left: -1.5vw;  /* half of the vw used by main */
+}
+
+#navList {
+    list-style-type: none;
+}
+
+.navItem {
+    margin-top: 15vh;
+    padding: 20px;
+    background-color: white;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+}
+
+.navItem img {
+    width: 2em;
+    height: 2em;
+}
+
+/* ==== Main Styling ====  */
+
+main {
+    position: relative;
+    background-color: white;
+    height: 100vh;
+    width: 86vw;
+    left: -3vw; /* get the border inside the navigation */
+    float: right;
+    border-radius: 2vw;
+}
