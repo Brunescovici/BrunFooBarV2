@@ -2,7 +2,7 @@
   --main-color: #576CD9;
   --shadow-color: #222;
   --button-text-color: #F8F8F8;
-  --photo-line-color: rgba(0,0,0,.3);
+  --photo-line-color: rgba(0, 0, 0, .3);
   --critically-text: #FF0000;
   --critically-background: rgba(255, 0, 0, 0.2);
   --low-text: #FFA200;
@@ -12,10 +12,9 @@
 }
 
 * {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
-
 
 /* ===== Containers Styling ===== */
 .titleForContainer {
@@ -24,6 +23,7 @@
   float: left;
   margin-left: 20px;
 }
+
 .containersBox {
   border-bottom: 5px solid var(--main-color);
   border-radius: 20px;
@@ -31,7 +31,8 @@
   padding: 30px;
   box-shadow: 0 3px 10px var(--shadow-color);
 }
-.seeAllButton{
+
+.seeAllButton {
   background-color: var(--main-color);
   border-radius: 20px;
   padding: 7px 15px 7px 15px;
@@ -40,8 +41,6 @@
   float: right;
 }
 
-
-
 /* ===== Bartenders Styling ===== */
 .contentBartenders {
   font-size: 16px;
@@ -49,14 +48,15 @@
   display: table;
   border-collapse: collapse;
 }
+
 .bartendersRow {
   display: table-row;
-
 }
+
 .bartendersCell {
-  display:table-cell;
-  width:33%;
-  padding:10px;
+  display: table-cell;
+  width: 33%;
+  padding: 10px;
   text-align: center;
   vertical-align: middle;
   align-content: center;
@@ -77,21 +77,23 @@
   margin-left: auto;
   margin-right: auto;
   border: 2px solid var(--shadow-color);
-
 }
+
 .photoContainer {
   border-left: 2px solid var(--photo-line-color);
   border-right: 2px solid var(--photo-line-color);
 }
-/* Names */
-.nameAndAction {
 
-}
+/* Names */
+.nameAndAction {}
+
 .name {
-  font-weight: bold;  /* idk about this */
+  font-weight: bold;
+  /* idk about this */
   font-size: 35px;
   text-align: left;
 }
+
 .action {
   font-style: italic;
   font-size: 20px;
@@ -101,26 +103,43 @@
 #photo1 {
   background-color: green;
 }
+
 #photo2 {
   background-color: purple;
 }
+
 #photo3 {
   background-color: red;
 }
 
 /* Container IDs for individual styling */
 #bartenderContainer {
-  margin-left: 300px;
+  margin-left: 270px;
+  margin-top: 40px;
   width: 700px;
-  height: 400px;
+  height: 380px;
 }
+
 #storageContainer {
+  margin-top: 40px;
+  margin-right: 50px;
   width: 700px;
-  height: 400px;
+  height: 380px;
+}
+
+#remainingTapContainer {
+  margin-left: 270px;
+  height: 340px;
+  width: 1000px;
+}
+
+#ordersContainer {
+  margin-right: 50px;
+  height: 340px;
+  width: 400px;
 }
 
 /* ===== Storage Styling ===== */
-
 .tableContent {
   margin-top: 100px;
 }
@@ -130,88 +149,206 @@
   border-collapse: collapse;
   padding: 5px;
   border-bottom: 2px solid var(--photo-line-color);
-
 }
+
 .storageTable thead {
   font-size: 25px;
 }
+
 .storageTable th {
   padding: 5px;
 }
+
 .storageTable td {
   border-top: 2px solid var(--photo-line-color);
   text-align: center;
   padding: 5px;
 }
+
 .productClass {
   font-size: 30px;
   text-align: left !important;
 }
+
 .productNameTitle {
   text-align: left !important;
-
 }
+
 .quantityClass {
   font-size: 30px;
-
 }
+
 .statusClass {
   font-size: 20px;
   font-weight: bold;
 }
+
 .statusArea {
   border-radius: 30px;
   padding: 3px 10px 3px 10px;
   width: 150px;
   margin: auto;
 }
+
 .criticallyLow {
   color: var(--critically-text);
   background-color: var(--critically-background);
 }
+
 .lowStock {
   color: var(--low-text);
   background-color: var(--low-background);
 }
+
 .onStock {
   color: var(--stock-text);
   background-color: var(--stock-background);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ===== Remaining Tap Styling ===== */
+.bars {
+  display: flex;
+}
 
+/* Progress bar style */
+.barAndName {
+  height: auto;
+  width: 60px;
+  margin-right: 80px;
+}
 
+.beerName {
+  font-size: 25px;
+  /* text-orientation: upright; */
+  /* TODO: uncomment this for the better way */
+  writing-mode: vertical-rl;
+  /* TODO: check for a better way to show text */
+}
 
+.beerBar {
+  width: 25px;
+  height: 270px;
+  color: var(--button-text-color);
+  position: relative;
+  border: 1px solid var(--shadow-color);
+  border-radius: 5px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.beerBarProgress {
+  width: 100%;
+  height: 30%;
+  display: block;
+  font-size: 12px;
+  background-color: var(--low-text);
+  color: var(--button-text-color);
+  bottom: 0;
+  position: absolute;
+  border-top: 1px solid var(--shadow-color);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.firstBeer {
+  margin-left: 22px;
+}
 
 /* ===== Orders Styling ===== */
+.clocks {
+  display: flex;
+  margin: 50px;
+}
+.clock1 {
+  margin-top: 100px;
+  margin-right: 110px;
 
+}
+.clock2 {
+ margin-top: 100px;
+}
 
+/* Circle progress bar */
+.circular {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  transform: scale(2);
+  border: 1px solid var(--shadow-color);
+  border-radius: 100%;
+}
+.inner {
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 80px;
+  margin: -40px 0 0 -40px;
+  background: #dde6f0;
+  border-radius: 100%;
+  border: 1px solid var(--shadow-color);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+.circle {
+
+}
+.circleTime {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 25px;
+  font-weight: 500;
+}
+.circleNumber {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 18px;
+  font-weight: 500;
+}
+.circleBar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  -webkit-border-radius: 100%;
+  clip: rect(0px, 100px, 100px, 50px);
+}
+.leftCircle .circleProgress {
+  z-index: 1;
+  animation: left 4s linear both;
+  border-radius: 50%;
+}
+@keyframes left {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+.rightCircle {
+  z-index: 3;
+  transform: rotate(180deg);
+}
+.rightCircle .circleProgress {
+
+  animation: right 4s linear both;
+  animation-delay: 4s;
+  border-radius: 50%;
+}
+@keyframes right {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+.circleProgress {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 100%;
+  clip: rect(0px, 50px, 100px, 0px);
+  background: var(--stock-text);
+}
 
 
 
@@ -222,6 +359,7 @@
 .left {
   float: left;
 }
+
 .right {
   float: right;
 }
