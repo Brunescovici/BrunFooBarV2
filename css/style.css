@@ -204,7 +204,7 @@ main {
 
 /* Container IDs for individual styling */
 #bartenderContainer {
-  margin-left: 270px;
+  margin-left: 80px;
   margin-top: 40px;
   width: 700px;
   height: 380px;
@@ -212,19 +212,19 @@ main {
 
 #storageContainer {
   margin-top: 40px;
-  margin-right: 50px;
+  margin-right: 40px;
   width: 700px;
   height: 380px;
 }
 
 #remainingTapContainer {
-  margin-left: 270px;
+  margin-left: 80px;
   height: 340px;
   width: 1000px;
 }
 
 #ordersContainer {
-  margin-right: 50px;
+  margin-right: 40px;
   height: 340px;
   width: 400px;
 }
