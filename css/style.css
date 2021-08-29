@@ -1,19 +1,108 @@
 :root {
-  --main-color: #576CD9;
-  --shadow-color: #222;
-  --button-text-color: #F8F8F8;
-  --photo-line-color: rgba(0, 0, 0, .3);
-  --critically-text: #FF0000;
-  --critically-background: rgba(255, 0, 0, 0.2);
-  --low-text: #FFA200;
-  --low-background: rgba(255, 162, 0, 0.2);
-  --stock-text: #4BA100;
-  --stock-background: rgba(119, 255, 0, 0.2);
+    --main-color: #576CD9;
+    --shadow-color: #222;
+    --button-text-color: #F8F8F8;
+    --photo-line-color: rgba(0, 0, 0, .3);
+    --critically-text: #FF0000;
+    --critically-background: rgba(255, 0, 0, 0.2);
+    --low-text: #FFA200;
+    --low-background: rgba(255, 162, 0, 0.2);
+    --stock-text: #4BA100;
+    --stock-background: rgba(119, 255, 0, 0.2);
 }
 
 * {
-  margin: 0;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* ==== Navigation Bar Styling ==== */
+
+#barName {
+    margin-top: 8vh;
+    font-size: 25pt;
+}
+
+#navigationBar {
+    background-color: var(--main-color);
+    position: relative;
+    width: 12vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: left;
+}
+
+#navigationBar h1 {
+    position: relative;
+    left: -1.5vw;  /* half of the vw used by main */
+}
+
+#navList {
+    list-style-type: none;
+    position: relative;
+    left: -0.8vw;
+}
+
+.navItem {
+    margin-top: 10vh;
+    padding: 20px;
+    background-color: white;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+}
+
+.selectedNavItem {
+    border-radius: 45% 0 0 45%;
+    position: relative;
+    padding-right: 3vw;
+}
+
+.selectedNavItem::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    bottom: 100%;
+    right: 0;
+    height: 150%;
+    width: 3vh;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0 3vh 0 0 #fff;
+}
+
+.selectedNavItem::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: 100%;
+    right: 0;
+    height: 150%;
+    width: 3vh;
+    border-top-right-radius: 50px;
+    box-shadow: 0 -3vh 0 0 #fff;
+}
+
+.navItem img {
+    width: 3em;
+    height: 3em;
+}
+
+
+/* ==== Main Styling ====  */
+
+main {
+    position: absolute;
+    background-color: white;
+    height: 100vh;
+    width: 88vw;
+    left: 9vw; /* get the border inside the navigation */
+    float: right;
+    border-radius: 2vw;
 }
 
 /* ===== Containers Styling ===== */

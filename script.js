@@ -1,5 +1,9 @@
 // Cache the DOM (Document Object Model)
 const barName = document.getElementById("BarName");
+// Navigation IDs
+const navDashboard = document.getElementById("dashboardNavElement");
+const navProfile = document.getElementById("profileNavElement");
+const navCalendar = document.getElementById("calendarNavElement");
 // Bartender IDs
 const bartenderContainer = document.getElementById("bartenderContainer");
 const seeMoreBartenders = document.getElementById("bartendersButton");
@@ -82,8 +86,35 @@ function workData(x) { // x is the data got from the database
   });
 }
 
-
-
 fetch("https://brunfoobar.herokuapp.com/")
   .then((response) => response.json())
   .then((data) => workData(data));
+
+// Navigation Script
+
+
+navDashboard.addEventListener('click', function () {
+  selectItem("dash");
+});
+navProfile.addEventListener('click', function () {
+  selectItem("profile");
+});
+navCalendar.addEventListener('click', function () {
+  selectItem("calendar");
+})
+
+function selectItem(x) {
+  navDashboard.classList.remove("selectedNavItem");
+  navProfile.classList.remove("selectedNavItem");
+  navCalendar.classList.remove("selectedNavItem");
+  console.log("it works");
+  if (x == "dash") {
+    navDashboard.classList.add("selectedNavItem");
+  }
+  else if (x == "profile") {
+    navProfile.classList.add("selectedNavItem");
+  }
+  else {
+    navCalendar.classList.add("selectedNavItem");
+  }
+}
