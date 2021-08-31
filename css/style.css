@@ -81,7 +81,7 @@
 .selectedNavItem {
   border-radius: 40% 0 0 40%;
   position: relative;
-  padding-right: 61px;
+  padding-right: 62px;
 }
 
 .selectedNavItem::before {
