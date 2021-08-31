@@ -1,127 +1,126 @@
 :root {
-    --main-color: #576CD9;
-    --shadow-color: #222;
-    --button-text-color: #F8F8F8;
-    --photo-line-color: rgba(0, 0, 0, .3);
-    --critically-text: #FF0000;
-    --critically-background: rgba(255, 0, 0, 0.2);
-    --low-text: #FFA200;
-    --low-background: rgba(255, 162, 0, 0.2);
-    --stock-text: #4BA100;
-    --stock-background: rgba(119, 255, 0, 0.2);
+  --main-color: #576cd9;
+  --shadow-color: #222;
+  --button-text-color: #f8f8f8;
+  --photo-line-color: rgba(0, 0, 0, 0.3);
+  --critically-text: #ff0000;
+  --critically-background: rgba(255, 0, 0, 0.2);
+  --low-text: #ffa200;
+  --low-background: rgba(255, 162, 0, 0.2);
+  --stock-text: #4ba100;
+  --stock-background: rgba(119, 255, 0, 0.2);
 }
 
 * {
-    margin: 0;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    padding-inline-start: 0;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  font-family: Arial, sans-serif;
 }
 
 /* ==== Navigation Bar Styling ==== */
 
 #barName {
-    margin-top: 8vh;
-    font-size: 30pt;
-    font-family: 'ZCOOL KuaiLe', cursive;
-    color: #fff;
+  margin-top: 8vh;
+  font-size: 30pt;
+  font-family: "ZCOOL KuaiLe", cursive;
+  color: #fff;
 }
 
 #navigationBar {
-    background-color: var(--main-color);
-    position: relative;
-    width: 250px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    float: left;
-    z-index: 5;    /* show over main to get the pseudo-border radius */
-    left: -150px;
-    transition: left 0.2s linear;
+  background-color: var(--main-color);
+  position: relative;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  float: left;
+  z-index: 5; /* show over main to get the pseudo-border radius */
+  left: -150px;
+  transition: left 0.2s linear;
 }
 
 #navigationBar:hover {
-    left: 0;
+  left: 0;
 }
 
 #navigationBar::after {
-    content: "";
-    position: absolute;
-    float:  right;
-    border-radius: 50px 0 0 50px;
-    background-color: white;
-    width: 75px;
-    height: 100vh;
-    left: 70%;
+  content: "";
+  position: absolute;
+  float: right;
+  border-radius: 50px 0 0 50px;
+  background-color: white;
+  width: 75px;
+  height: 100vh;
+  left: 70%;
 }
 
 #navigationBar h1 {
-    position: relative;
-    left: -35px;
+  position: relative;
+  left: -35px;
 }
 
 #navList {
-    list-style-type: none;
-    position: relative;
-    left: -15px;
+  list-style-type: none;
+  position: relative;
+  left: -15px;
 }
 
 .navItem {
-    margin-top: 10vh;
-    padding: 20px;
-    background-color: white;
-    width: 3em;
-    height: 3em;
-    border-radius: 50%;
-    cursor: pointer;
+  margin-top: 10vh;
+  padding: 20px;
+  background-color: white;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .selectedNavItem {
-    border-radius: 40% 0 0 40%;
-    position: relative;
-    padding-right: 61px;
+  border-radius: 40% 0 0 40%;
+  position: relative;
+  padding-right: 61px;
 }
 
 .selectedNavItem::before {
-    content: "";
-    position: absolute;
-    background-color: transparent;
-    bottom: 100%;
-    right: 0;
-    height: 150%;
-    width: 3vh;
-    border-bottom-right-radius: 50px;
-    box-shadow: 0 3vw 0 0 #fff;
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  bottom: 100%;
+  right: 0;
+  height: 150%;
+  width: 3vh;
+  border-bottom-right-radius: 50px;
+  box-shadow: 0 3vw 0 0 #fff;
 }
 
 .selectedNavItem::after {
-    content: "";
-    position: absolute;
-    background-color: transparent;
-    top: 100%;
-    right: 0;
-    height: 150%;
-    width: 3vh;
-    border-top-right-radius: 50px;
-    box-shadow: 0 -3vw 0 0 #fff;
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: 100%;
+  right: 0;
+  height: 150%;
+  width: 3vh;
+  border-top-right-radius: 50px;
+  box-shadow: 0 -3vw 0 0 #fff;
 }
 
 .navItem img {
-    width: 3em;
-    height: 3em;
+  width: 3em;
+  height: 3em;
 }
-
 
 /* ==== Main Styling ====  */
 
 main {
-    position: absolute;
-    background-color: white;
-    height: 100vh;
-    width: 88vw;
-    left: 150px;
+  position: absolute;
+  background-color: white;
+  height: 100vh;
+  width: 88vw;
+  left: 150px;
 }
 
 /* ===== Containers Styling ===== */
@@ -133,7 +132,7 @@ main {
 }
 
 .containersBox {
-    position: relative;
+  position: relative;
   border-bottom: 5px solid var(--main-color);
   border-radius: 20px;
   margin: 20px;
@@ -195,7 +194,8 @@ main {
 }
 
 /* Names */
-.nameAndAction {}
+.nameAndAction {
+}
 
 .name {
   font-weight: bold;
@@ -369,10 +369,9 @@ main {
 .clock1 {
   margin-top: 100px;
   margin-right: 110px;
-
 }
 .clock2 {
- margin-top: 100px;
+  margin-top: 100px;
 }
 
 /* Circle progress bar */
@@ -398,7 +397,6 @@ main {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 .circle {
-
 }
 .circleTime {
   position: absolute;
@@ -441,7 +439,6 @@ main {
   transform: rotate(180deg);
 }
 .rightCircle .circleProgress {
-
   animation: right 4s linear both;
   animation-delay: 4s;
   border-radius: 50%;
@@ -459,11 +456,6 @@ main {
   clip: rect(0px, 50px, 100px, 0px);
   background: var(--stock-text);
 }
-
-
-
-
-
 
 /* ===== Align containers ===== */
 .left {
