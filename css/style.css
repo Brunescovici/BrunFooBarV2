@@ -198,6 +198,8 @@ main {
   min-width: 100px;
 }
 
+
+
 /* Names */
 .nameAndAction {
 }
@@ -215,18 +217,6 @@ main {
   text-align: left;
 }
 
-/* IDs for tests */
-#photo1 {
-  background-color: green;
-}
-
-#photo2 {
-  background-color: purple;
-}
-
-#photo3 {
-  background-color: red;
-}
 
 /* Container IDs for individual styling */
 #bartenderContainer {

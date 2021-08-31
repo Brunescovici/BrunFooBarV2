@@ -129,6 +129,7 @@ function workData(x) { // x is the data got from the database
       clone.querySelector(".action").textContent = "waiting for orders";
     i++;
     clone.querySelector(".bartenderNumber").textContent = "#" + i;
+    clone.querySelector(".photoBartender").src = "bartenderPics/bartender" + i + ".jpg";
     bartenderContainer.appendChild(clone);
   });
   x.storage.forEach(el => {
