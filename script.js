@@ -118,3 +118,5 @@ function selectItem(x) {
     navCalendar.classList.add("selectedNavItem");
   }
 }
+
+console.log("test media");
