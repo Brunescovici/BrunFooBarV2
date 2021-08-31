@@ -23,29 +23,49 @@
 
 #barName {
     margin-top: 8vh;
-    font-size: 25pt;
+    font-size: 30pt;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    color: #fff;
 }
 
 #navigationBar {
     background-color: var(--main-color);
     position: relative;
-    width: 12vw;
+    width: 250px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     float: left;
+    z-index: 5;    /* show over main to get the pseudo-border radius */
+    left: -150px;
+}
+
+#navigationBar:hover {
+    left: 0;
+    animation: linear 2s;
+}
+
+#navigationBar::after {
+    content: "";
+    position: absolute;
+    float:  right;
+    border-radius: 50px 0 0 50px;
+    background-color: white;
+    width: 75px;
+    height: 100vh;
+    left: 70%;
 }
 
 #navigationBar h1 {
     position: relative;
-    left: -1.5vw;  /* half of the vw used by main */
+    left: -35px;
 }
 
 #navList {
     list-style-type: none;
     position: relative;
-    left: -0.8vw;
+    left: -15px;
 }
 
 .navItem {
@@ -59,9 +79,9 @@
 }
 
 .selectedNavItem {
-    border-radius: 45% 0 0 45%;
+    border-radius: 40% 0 0 40%;
     position: relative;
-    padding-right: 3vw;
+    padding-right: 61px;
 }
 
 .selectedNavItem::before {
@@ -73,7 +93,7 @@
     height: 150%;
     width: 3vh;
     border-bottom-right-radius: 50px;
-    box-shadow: 0 3vh 0 0 #fff;
+    box-shadow: 0 3vw 0 0 #fff;
 }
 
 .selectedNavItem::after {
@@ -85,7 +105,7 @@
     height: 150%;
     width: 3vh;
     border-top-right-radius: 50px;
-    box-shadow: 0 -3vh 0 0 #fff;
+    box-shadow: 0 -3vw 0 0 #fff;
 }
 
 .navItem img {
@@ -101,9 +121,7 @@ main {
     background-color: white;
     height: 100vh;
     width: 88vw;
-    left: 9vw; /* get the border inside the navigation */
-    float: right;
-    border-radius: 2vw;
+    left: 150px;
 }
 
 /* ===== Containers Styling ===== */
@@ -115,11 +133,13 @@ main {
 }
 
 .containersBox {
+    position: relative;
   border-bottom: 5px solid var(--main-color);
   border-radius: 20px;
   margin: 20px;
   padding: 30px;
   box-shadow: 0 3px 10px var(--shadow-color);
+  z-index: 99;
 }
 
 .seeAllButton {
