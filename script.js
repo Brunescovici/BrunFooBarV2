@@ -92,9 +92,16 @@ function updateData(x) {    // x is the data got from the database
     time = Math.floor(time);
     if(time>=720)
         clone.querySelector(".circleBar").background = "red";
+    if(time<=360)
     clone.querySelector(".leftCircle .circleProgress").style.transform = "rotate(" + time/2 + "deg)";
-    if(time>360)
+    else if(time>360 && time <=720) {
+      clone.querySelector(".leftCircle .circleProgress").style.transform = "rotate(180deg)";
       clone.querySelector(".rightCircle .circleProgress").style.transform = "rotate(" + (time-360)/2 + "deg)";
+    }
+    else {
+      clone.querySelector(".leftCircle .circleProgress").style.transform = "rotate(180deg)";
+      clone.querySelector(".rightCircle .circleProgress").style.transform = "rotate(180deg)";
+    }
     if(time%60>9)
       clone.getElementById("clockTime").textContent = Math.floor(time/60) + ":" + time%60;
     else
