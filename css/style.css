@@ -148,10 +148,11 @@ main {
   color: var(--button-text-color);
   font-size: 16px;
   float: right;
+  cursor: pointer;
 }
 
 /* ===== Bartenders Styling ===== */
-.contentBartenders {
+#contentBartenders {
   font-size: 16px;
   margin-top: 50px;
   display: table;
