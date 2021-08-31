@@ -81,7 +81,7 @@
 .selectedNavItem {
   border-radius: 40% 0 0 40%;
   position: relative;
-  padding-right: 61px;
+  padding-right: 62px;
 }
 
 .selectedNavItem::before {
@@ -156,6 +156,7 @@ main {
   font-size: 16px;
   margin-top: 50px;
   display: table;
+  table-layout: fixed;
   border-collapse: collapse;
 }
 
@@ -165,7 +166,6 @@ main {
 
 .bartendersCell {
   display: table-cell;
-  width: 33%;
   padding: 10px;
   text-align: center;
   vertical-align: middle;
@@ -176,6 +176,8 @@ main {
 .bartenderNumber {
   font-weight: bold;
   font-size: 35px;
+  max-width: 100px;
+  min-width: 75px;
 }
 
 /* Photos */
@@ -192,6 +194,8 @@ main {
 .photoContainer {
   border-left: 2px solid var(--photo-line-color);
   border-right: 2px solid var(--photo-line-color);
+  max-width: 125px;
+  min-width: 100px;
 }
 
 /* Names */
@@ -208,6 +212,7 @@ main {
 .action {
   font-style: italic;
   font-size: 20px;
+  text-align: left;
 }
 
 /* IDs for tests */
@@ -358,6 +363,7 @@ main {
   border-radius: 5px;
   margin-top: 20px;
 }
+
 .firstBeer {
   margin-left: 22px;
 }
@@ -427,27 +433,14 @@ main {
 }
 .leftCircle .circleProgress {
   z-index: 1;
-  animation: left 4s linear both;
   border-radius: 50%;
-}
-@keyframes left {
-  100% {
-    transform: rotate(180deg);
-  }
 }
 .rightCircle {
   z-index: 3;
   transform: rotate(180deg);
 }
 .rightCircle .circleProgress {
-  animation: right 4s linear both;
-  animation-delay: 4s;
   border-radius: 50%;
-}
-@keyframes right {
-  100% {
-    transform: rotate(180deg);
-  }
 }
 .circleProgress {
   position: absolute;
