@@ -93,30 +93,28 @@ fetch("https://brunfoobar.herokuapp.com/")
 // Navigation Script
 
 
-navDashboard.addEventListener('click', function () {
-  selectItem("dash");
-});
-navProfile.addEventListener('click', function () {
-  selectItem("profile");
-});
-navCalendar.addEventListener('click', function () {
-  selectItem("calendar");
-})
+// navDashboard.addEventListener('click', function () {
+//   selectItem("dash");
+// });
+// navProfile.addEventListener('click', function () {
+//   selectItem("profile");
+// });
+// navCalendar.addEventListener('click', function () {
+//   selectItem("calendar");
+// })
 
-function selectItem(x) {
-  navDashboard.classList.remove("selectedNavItem");
-  navProfile.classList.remove("selectedNavItem");
-  navCalendar.classList.remove("selectedNavItem");
-  console.log("it works");
-  if (x == "dash") {
-    navDashboard.classList.add("selectedNavItem");
-  }
-  else if (x == "profile") {
-    navProfile.classList.add("selectedNavItem");
-  }
-  else {
-    navCalendar.classList.add("selectedNavItem");
-  }
-}
-
-console.log("test media");
+// function selectItem(x) {
+//   navDashboard.classList.remove("selectedNavItem");
+//   navProfile.classList.remove("selectedNavItem");
+//   navCalendar.classList.remove("selectedNavItem");
+//   console.log("it works");
+//   if (x == "dash") {
+//     navDashboard.classList.add("selectedNavItem");
+//   }
+//   else if (x == "profile") {
+//     navProfile.classList.add("selectedNavItem");
+//   }
+//   else {
+//     navCalendar.classList.add("selectedNavItem");
+//   }
+// }
