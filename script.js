@@ -124,7 +124,6 @@ function updateData(x) {    // x is the data got from the database
       clone.getElementById("clock").style.display = "none";
     clockContainer.appendChild(clone);
     })
-
 }
 
 function workData(x) { // x is the data got from the database
@@ -264,7 +263,7 @@ function selectItem(x) {
 }
 
 function reportWindowSize() {
-  if(window.innerWidth >= 578) {
+  if(window.innerWidth >= 768) {
     navList.style.display = "block";
     navBGMobile.style.height = "100px";
   }
@@ -275,12 +274,12 @@ function reportWindowSize() {
 
 function expandRetractNav() {
   
-  if(!navExpand && window.innerWidth <= 577) {
+  if(!navExpand && window.innerWidth <= 768) {
     navBGMobile.style.height = "100vh";
     navList.style.display = "block";
     navExpand=1;
   }
-  else if(navExpand && window.innerWidth <= 577) {
+  else if(navExpand && window.innerWidth <= 768) {
     navBGMobile.style.height = "100px";
     navList.style.display = "none";
     navExpand=0;
