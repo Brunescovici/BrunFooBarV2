@@ -15,10 +15,14 @@
   </head>
 
   <body>
+    <div id="navBackgroundMobile">
     <nav id="navigationBar">
       <h1 id="barName">FooBar</h1>
+      <div id="burgerNavButton">
+        ≡
+      </div>
       <ul id="navList">
-        <li class="navItem selectedNavItem" id="dashboardNavElement">
+        <li href="google.com" class="navItem selectedNavItem" id="dashboardNavElement">
           <img src="icons/dashboard.png" />
         </li>
         <li class="navItem" id="profileNavElement">
@@ -29,9 +33,10 @@
         </li>
       </ul>
     </nav>
+  </div>
     <main>
       <!-- ===== Bartenders View  ===== -->
-      <div class="containersBox left" id="bartenderContainer">
+      <div class="containersBox left">
         <div class="titleAndButton">
           <p class="titleForContainer">Bartenders</p>
           <button id="bartendersButton" class="seeAllButton" type="button" name="button">
@@ -39,7 +44,7 @@
           </button>
         </div>
 
-        <div class="contentBartenders">
+        <div class="contentBartenders" id="bartenderContainer">
         </div>
       </div>
 
@@ -98,7 +103,7 @@
   </body>
 
   <template id="bartenderTemplate">
-    <div class="bartendersRow" id="">
+    <div class="bartendersRow left" id="">
         <div class="bartendersCell">
           <p class="bartenderNumber"></p>
         </div>

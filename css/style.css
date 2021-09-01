@@ -1,5 +1,6 @@
 :root {
   --main-color: #576cd9;
+  --secondary-color: #7c8ee9;
   --shadow-color: #222;
   --button-text-color: #f8f8f8;
   --photo-line-color: rgba(0, 0, 0, 0.3);
@@ -31,14 +32,14 @@
 #navigationBar {
   background-color: var(--main-color);
   position: relative;
-  width: 250px;
+  width: 220px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   float: left;
   z-index: 5; /* show over main to get the pseudo-border radius */
-  left: -150px;
+  left: -120px;
   transition: left 0.2s linear;
 }
 
@@ -84,7 +85,6 @@
   padding-right: 62px;
 }
 
-
 .selectedNavItem::before {
   content: "";
   position: absolute;
@@ -114,26 +114,29 @@
   height: 3em;
 }
 
+#burgerNavButton {
+  display: none;
+}
+
 /* ==== Main Styling ====  */
 
 main {
   position: absolute;
   background-color: white;
   height: 100vh;
-  width: 88vw;
+  width: 90vw;
   left: 150px;
 }
 
 /* ===== Containers Styling ===== */
 .titleForContainer {
   font-weight: bold;
-  font-size: 37px;
+  font-size: 35px;
   float: left;
   margin-left: 20px;
 }
 
 .centerTitle {
-
 }
 
 .containersBox {
@@ -203,8 +206,6 @@ main {
   min-width: 100px;
 }
 
-
-
 /* Names */
 .nameAndAction {
 }
@@ -222,13 +223,12 @@ main {
   text-align: left;
 }
 
-
 /* Container IDs for individual styling */
 #bartenderContainer {
   margin-left: 80px;
   margin-top: 40px;
   width: 700px;
-  height: 380px;
+  height: 350px;
 }
 
 #storageContainer {
@@ -239,7 +239,6 @@ main {
 }
 
 #remainingTapContainer {
-  margin-left: 80px;
   height: 340px;
   width: 1000px;
 }
@@ -455,37 +454,83 @@ main {
   float: right;
 }
 
-
 /* ===== Media Query for responsive design ===== */
-@media only screen and (max-width: 320px) {
+
+@media only screen and (max-width: 768px) {
   /* ===== Containers Styling ===== */
   .titleForContainer {
     font-size: 23px;
-    color: teal;
+  }
+  /* ==== Navigation Styling ==== */
+  #navigationBar {
+    background-color: var(--main-color);
+    position: sticky;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    z-index: 5; /* show over main to get the pseudo-border radius */
+  }
+  #navigationBar::after {
+    display: none;
+  }
+  #navigationBar::before {
+    display: none;
+  }
+  #navList {
+    display: none;
+  }
+  .navItem img {
+    width: 1.5em;
+    height: 1.5em;
+  }
+  .selectedNavItem {
+    border-radius: 50%;
+  }
+  .selectedNavItem::before {
+    display: none;
+  }
+  .selectedNavItem::after {
+    display: none;
+  }
+  .navItem {
+    width: 1.5em;
+    height: 1.5em;
+    padding: 20px;
+    margin-left: 25px;
+    margin-top: 50px;
+  }
+  #barName {
+    margin-top: 25px;
+    font-size: 32pt;
+  }
+  #navigationBar h1 {
+    left: 0;
+  }
+  #navBackgroundMobile {
+    position: sticky;
+    background-color: var(--secondary-color);
+    height: 100px;
+    width: 100vw;
+    transition: height 0.2s linear;
+  }
+  #burgerNavButton {
+    display: block;
+    position: absolute;
+    font-size: 48pt;
+    color: white;
+    right: 50px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 100px;
+    transition: all 0.5s linear;
+    user-select: none;
   }
 }
-@media only screen and (min-width: 321px) and (max-width: 375px) {
-  /* ===== Containers Styling ===== */
-  .titleForContainer {
-    font-size: 23px;
-    color: pink;
-  }
-}
 
-
-
-@media only screen and (min-width: 376px) and (max-width: 577px) {
-  /* ===== Containers Styling ===== */
-  .titleForContainer {
-    font-size: 23px;
-    color: magenta;
-  }
-}
-
-
-
-
-@media only screen and (min-width: 578px) and (max-width: 768px) {
+@media only screen and (max-width: 1px) {
   main {
     /* height: 88vh; */
     /* width: 100vw; */
@@ -554,7 +599,6 @@ main {
     text-align: left;
   }
 
-
   /* Container IDs for individual styling */
   #bartenderContainer {
     margin: 10px 20px 0px 10px;
@@ -584,14 +628,6 @@ main {
     float: none;
   }
 
-
-
-
-
-
-
-
-
   /* ===== Storage Styling ===== */
   .tableContent {
     margin-top: 400px;
@@ -604,7 +640,6 @@ main {
   .productClass {
     font-size: 40px;
   }
-
 
   .quantityClass {
     font-size: 40px;
@@ -622,13 +657,6 @@ main {
     margin: auto;
   }
 
-
-
-
-
-
-
-
   /* ===== Remaining Tap Styling ===== */
   .bars {
     display: grid;
@@ -639,7 +667,7 @@ main {
     height: 50px;
     width: 100px;
     margin-bottom: 50px;
-    transform:  rotate(270deg);
+    transform: rotate(270deg);
   }
 
   .beerName {
@@ -679,12 +707,10 @@ main {
     /* margin-left: 22px; */
   }
 
-
   /* ===== Orders Styling ===== */
   .clocks {
     display: block;
     margin: 50px 50px 50px 80px;
-
   }
   .clock1 {
     margin-top: 60px;
@@ -712,20 +738,7 @@ main {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 @media only screen and (min-width: 769px) and (max-width: 992px) {
-
   /* main {
     position: absolute;
     height: 100vh;
@@ -741,9 +754,7 @@ main {
     text-align: center;
     float: none;
     margin: 0;
-
   }
-
 
   .seeAllButton {
     border-radius: 25px;
@@ -757,7 +768,6 @@ main {
     width: 70px;
     bottom: 10px;
   }
-
 
   /* ===== Bartenders Styling ===== */
   /* Numbers */
@@ -784,33 +794,38 @@ main {
     font-size: 11px;
   }
 
+  /* Rows */
+
+  .bartendersRow {
+    max-height: 70px;
+  }
+
   /* Container IDs for individual styling */
   #bartenderContainer {
     margin-left: 0px;
     margin-top: 30px;
     width: 250px;
-    height: 240px;
+    height: 200px;
   }
 
   #storageContainer {
-    margin-top: 30px;
-    margin-right: 10px;
+    margin-top: 20px;
+    margin-right: 40px;
     width: 250px;
     height: 240px;
   }
 
   #remainingTapContainer {
-    margin-left: 0px;
+    margin-left: 20px;
     width: 380px;
     height: 240px;
   }
 
   #ordersContainer {
-    margin-right: 10px;
+    margin-right: 40px;
     width: 125px;
     height: 240px;
   }
-
 
   /* ===== Storage Styling ===== */
   .tableContent {
@@ -824,7 +839,6 @@ main {
   .productClass {
     font-size: 14px;
   }
-
 
   .quantityClass {
     font-size: 14px;
@@ -872,12 +886,10 @@ main {
     margin-left: 10px;
   }
 
-
   /* ===== Orders Styling ===== */
   .clocks {
     display: block;
     margin: 0px 0px 0px 13px;
-
   }
   .clock1 {
     margin-top: 0px;
@@ -942,12 +954,18 @@ main {
     font-size: 13px;
   }
 
+  /* Rows */
+
+  .bartendersRow {
+    max-height: 80px;
+  }
+
   /* Container IDs for individual styling */
   #bartenderContainer {
     margin-left: 20px;
     margin-top: 30px;
     width: 320px;
-    height: 280px;
+    height: 250px;
   }
 
   #storageContainer {
@@ -958,7 +976,6 @@ main {
   }
 
   #remainingTapContainer {
-    margin-left: 20px;
     height: 280px;
     width: 480px;
   }
@@ -981,7 +998,6 @@ main {
   .productClass {
     font-size: 16px;
   }
-
 
   .quantityClass {
     font-size: 16px;
@@ -1029,12 +1045,10 @@ main {
     margin-left: 22px;
   }
 
-
   /* ===== Orders Styling ===== */
   .clocks {
     display: block;
     margin: 50px 50px 50px 45px;
-
   }
   .clock1 {
     margin-top: 60px;
@@ -1061,7 +1075,6 @@ main {
     font-size: 14px;
   }
 }
-
 
 @media only screen and (min-width: 1201px) and (max-width: 1440px) {
   /* ===== Containers Styling ===== */
@@ -1094,23 +1107,28 @@ main {
     font-size: 15px;
   }
 
+  /* Rows */
+
+  .bartendersRow {
+    max-height: 80px;
+  }
+
   /* Container IDs for individual styling */
   #bartenderContainer {
     margin-left: 30px;
     margin-top: 40px;
     width: 400px;
-    height: 300px;
+    height: 260px;
   }
 
   #storageContainer {
-    margin-top: 40px;
+    margin-top: 20px;
     margin-right: 40px;
     width: 400px;
     height: 300px;
   }
 
   #remainingTapContainer {
-    margin-left: 30px;
     height: 300px;
     width: 550px;
   }
@@ -1133,7 +1151,6 @@ main {
   .productClass {
     font-size: 21px;
   }
-
 
   .quantityClass {
     font-size: 20px;
@@ -1181,12 +1198,10 @@ main {
     margin-left: 22px;
   }
 
-
   /* ===== Orders Styling ===== */
   .clocks {
     display: block;
     margin: 50px 50px 50px 80px;
-
   }
   .clock1 {
     margin-top: 60px;
@@ -1212,8 +1227,6 @@ main {
   .circleNumber {
     font-size: 14px;
   }
-
-
 }
 
 @media only screen and (min-width: 1441px) and (max-width: 1900px) {
@@ -1247,29 +1260,34 @@ main {
     font-size: 18px;
   }
 
+  /* Rows */
+
+  .bartendersRow {
+    max-height: 90px;
+  }
+
   /* Container IDs for individual styling */
   #bartenderContainer {
     margin-left: 50px;
     margin-top: 40px;
     width: 500px;
-    height: 330px;
+    height: 290px;
   }
 
   #storageContainer {
-    margin-top: 40px;
-    margin-right: 40px;
+    margin-top: 25px;
+    margin-right: 60px;
     width: 500px;
     height: 330px;
   }
 
   #remainingTapContainer {
-    margin-left: 50px;
     height: 310px;
     width: 650px;
   }
 
   #ordersContainer {
-    margin-right: 40px;
+    margin-right: 60px;
     height: 310px;
     width: 350px;
   }
@@ -1286,7 +1304,6 @@ main {
   .productClass {
     font-size: 25px;
   }
-
 
   .quantityClass {
     font-size: 22px;
@@ -1334,7 +1351,6 @@ main {
   .firstBeer {
     margin-left: 22px;
   }
-
 
   /* ===== Orders Styling ===== */
   .clocks {

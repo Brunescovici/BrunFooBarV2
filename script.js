@@ -2,8 +2,11 @@
 const barName = document.getElementById("BarName");
 // Navigation IDs
 const navDashboard = document.getElementById("dashboardNavElement");
+const navList = document.getElementById("navList");
 const navProfile = document.getElementById("profileNavElement");
 const navCalendar = document.getElementById("calendarNavElement");
+const navBGMobile = document.getElementById("navBackgroundMobile");
+const navBurgerButton = document.getElementById("burgerNavButton");
 // Bartender IDs
 const bartenderContainer = document.getElementById("bartenderContainer");
 const seeMoreBartenders = document.getElementById("bartendersButton");
@@ -42,6 +45,14 @@ const storageBeerTemplate = document.getElementById("storageBeerTemplate");
 const tapBeerTemplate = document.getElementById("tapBeerTemplate");
 const clockTemplate = document.getElementById("clockTemplate");
 
+//Event Listeners
+navBurgerButton.addEventListener('click', expandRetractNav);
+profileNavElement.addEventListener('click', expandRetractNav);
+calendarNavElement.addEventListener('click', expandRetractNav);
+dashboardNavElement.addEventListener('click', expandRetractNav);
+
+window.onresize = reportWindowSize;
+
 window.addEventListener('load', function () {
     let fetchInterval = 1000;
 
@@ -54,7 +65,7 @@ function fetchFct() {
         .then((data) => updateData(data));
 }
 
-let i = 0, barSize = 0; // number to count the bartenders and give them an id
+let i = 0, barSize = 0, navExpand = 0; // number to count the bartenders and give them an id
 let time = 0; //number to count the time elapsed from when the order was taken
 let beersArray = []; //arrays
 
@@ -241,7 +252,6 @@ function selectItem(x) {
   navDashboard.classList.remove("selectedNavItem");
   navProfile.classList.remove("selectedNavItem");
   navCalendar.classList.remove("selectedNavItem");
-  console.log("it works");
   if (x == "dash") {
     navDashboard.classList.add("selectedNavItem");
   }
@@ -250,5 +260,29 @@ function selectItem(x) {
   }
   else {
     navCalendar.classList.add("selectedNavItem");
+  }
+}
+
+function reportWindowSize() {
+  if(window.innerWidth >= 578) {
+    navList.style.display = "block";
+    navBGMobile.style.height = "100px";
+  }
+  else if(!navExpand) {
+    navList.style.display = "none";
+  }
+}
+
+function expandRetractNav() {
+  
+  if(!navExpand && window.innerWidth <= 577) {
+    navBGMobile.style.height = "100vh";
+    navList.style.display = "block";
+    navExpand=1;
+  }
+  else if(navExpand && window.innerWidth <= 577) {
+    navBGMobile.style.height = "100px";
+    navList.style.display = "none";
+    navExpand=0;
   }
 }
