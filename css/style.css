@@ -84,6 +84,7 @@
   padding-right: 62px;
 }
 
+
 .selectedNavItem::before {
   content: "";
   position: absolute;
@@ -129,6 +130,10 @@ main {
   font-size: 37px;
   float: left;
   margin-left: 20px;
+}
+
+.centerTitle {
+
 }
 
 .containersBox {
@@ -448,4 +453,916 @@ main {
 
 .right {
   float: right;
+}
+
+
+/* ===== Media Query for responsive design ===== */
+@media only screen and (max-width: 320px) {
+  /* ===== Containers Styling ===== */
+  .titleForContainer {
+    font-size: 23px;
+    color: teal;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+  /* ===== Containers Styling ===== */
+  .titleForContainer {
+    font-size: 23px;
+    color: pink;
+  }
+}
+
+
+
+@media only screen and (min-width: 376px) and (max-width: 577px) {
+  /* ===== Containers Styling ===== */
+  .titleForContainer {
+    font-size: 23px;
+    color: magenta;
+  }
+}
+
+
+
+
+@media only screen and (min-width: 578px) and (max-width: 768px) {
+  main {
+    /* height: 88vh; */
+    /* width: 100vw; */
+    left: 0px;
+  }
+
+  /* ===== Containers Styling ===== */
+  .titleForContainer {
+    font-weight: bold;
+    font-size: 50px;
+    float: left;
+    margin-left: 20px;
+    color: red;
+  }
+
+  .containersBox {
+    position: relative;
+    border-bottom: 5px solid var(--main-color);
+    border-radius: 20px;
+    margin: 20px;
+    padding: 30px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+    z-index: 99;
+  }
+
+  .seeAllButton {
+    background-color: var(--main-color);
+    border-radius: 40px;
+    padding: 13px 23px 13px 23px;
+    color: var(--button-text-color);
+    font-size: 25px;
+    float: right;
+  }
+
+  /* ===== Bartenders Styling ===== */
+  .contentBartenders {
+    font-size: 25px;
+    margin-top: 200px;
+  }
+
+  .bartendersCell {
+    padding: 5px;
+  }
+
+  /* Numbers */
+  .bartenderNumber {
+    font-size: 50px;
+  }
+
+  /* Photos */
+  .photoBartender {
+    height: 150px;
+    width: 150px;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .name {
+    font-size: 50px;
+  }
+
+  .action {
+    font-style: italic;
+    font-size: 30px;
+    text-align: left;
+  }
+
+
+  /* Container IDs for individual styling */
+  #bartenderContainer {
+    margin: 10px 20px 0px 10px;
+    width: 100vw;
+    height: 100vh;
+    float: none;
+  }
+
+  #storageContainer {
+    margin: 10px 20px 0px 10px;
+    width: 100vw;
+    height: 100vh;
+    float: none;
+  }
+
+  #remainingTapContainer {
+    margin: 10px 20px 0px 10px;
+    width: 100vw;
+    height: 100vh;
+    float: none;
+  }
+
+  #ordersContainer {
+    margin: 10px 20px 0px 10px;
+    width: 100vw;
+    height: 100vh;
+    float: none;
+  }
+
+
+
+
+
+
+
+
+
+  /* ===== Storage Styling ===== */
+  .tableContent {
+    margin-top: 400px;
+  }
+
+  .storageTable thead {
+    font-size: 40px;
+  }
+
+  .productClass {
+    font-size: 40px;
+  }
+
+
+  .quantityClass {
+    font-size: 40px;
+  }
+
+  .statusClass {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .statusArea {
+    border-radius: 30px;
+    padding: 3px 10px 3px 10px;
+    width: 200px;
+    margin: auto;
+  }
+
+
+
+
+
+
+
+
+  /* ===== Remaining Tap Styling ===== */
+  .bars {
+    display: grid;
+  }
+
+  /* Progress bar style */
+  .barAndName {
+    height: 50px;
+    width: 100px;
+    margin-bottom: 50px;
+    transform:  rotate(270deg);
+  }
+
+  .beerName {
+    font-size: 35px;
+    width: auto;
+    height: auto;
+    /* text-orientation: upright; */
+    /* TODO: uncomment this for the better way */
+    writing-mode: vertical-rl;
+    /* TODO: check for a better way to show text */
+  }
+
+  .beerBar {
+    width: 25px;
+    height: 500px;
+    color: var(--button-text-color);
+    position: relative;
+    border: 1px solid var(--shadow-color);
+    border-radius: 5px;
+    transform: rotate(180deg);
+  }
+
+  .beerBarProgress {
+    width: 100%;
+    height: 30%;
+    display: block;
+    font-size: 12px;
+    background-color: var(--low-text);
+    color: var(--button-text-color);
+    bottom: 0;
+    position: absolute;
+    border-top: 1px solid var(--shadow-color);
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  .firstBeer {
+    /* margin-left: 22px; */
+  }
+
+
+  /* ===== Orders Styling ===== */
+  .clocks {
+    display: block;
+    margin: 50px 50px 50px 80px;
+
+  }
+  .clock1 {
+    margin-top: 60px;
+    margin-right: 90px;
+  }
+  .clock2 {
+    margin-top: 30px;
+  }
+
+  /* Circle progress bar */
+  .circular {
+    height: 100px;
+    width: 100px;
+    transform: scale(1.2);
+  }
+  .inner {
+    height: 80px;
+    width: 80px;
+  }
+  .circleTime {
+    font-size: 18px;
+  }
+  .circleNumber {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+
+  /* main {
+    position: absolute;
+    height: 100vh;
+    width: 88vw;
+  } */
+
+  /* ===== Containers Styling ===== */
+  .titleForContainer {
+    font-size: 18px;
+  }
+
+  .centerTitle {
+    text-align: center;
+    float: none;
+    margin: 0;
+
+  }
+
+
+  .seeAllButton {
+    border-radius: 25px;
+    padding: 5px 10px 5px 10px;
+    font-size: 13px;
+  }
+  #ordersButton {
+    position: absolute;
+    margin-left: -50px;
+    left: 59%;
+    width: 70px;
+    bottom: 10px;
+  }
+
+
+  /* ===== Bartenders Styling ===== */
+  /* Numbers */
+  .bartenderNumber {
+    font-size: 16px;
+  }
+
+  /* Photos */
+  .photoBartender {
+    height: 40px;
+    width: 40px;
+    margin: 3px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Names */
+  .name {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .action {
+    font-size: 11px;
+  }
+
+  /* Container IDs for individual styling */
+  #bartenderContainer {
+    margin-left: 0px;
+    margin-top: 30px;
+    width: 250px;
+    height: 240px;
+  }
+
+  #storageContainer {
+    margin-top: 30px;
+    margin-right: 10px;
+    width: 250px;
+    height: 240px;
+  }
+
+  #remainingTapContainer {
+    margin-left: 0px;
+    width: 380px;
+    height: 240px;
+  }
+
+  #ordersContainer {
+    margin-right: 10px;
+    width: 125px;
+    height: 240px;
+  }
+
+
+  /* ===== Storage Styling ===== */
+  .tableContent {
+    margin-top: 50px;
+  }
+
+  .storageTable thead {
+    font-size: 13px;
+  }
+
+  .productClass {
+    font-size: 14px;
+  }
+
+
+  .quantityClass {
+    font-size: 14px;
+  }
+
+  .statusClass {
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  .statusArea {
+    border-radius: 30px;
+    padding: 3px 10px 3px 10px;
+    width: 70px;
+    margin: auto;
+  }
+
+  /* ===== Remaining Tap Styling ===== */
+  /* Progress bar style */
+  .barAndName {
+    height: auto;
+    width: 50px;
+    margin-right: 10px;
+  }
+
+  .beerName {
+    font-size: 12px;
+    /* text-orientation: upright; */
+    /* TODO: uncomment this for the better way */
+    writing-mode: vertical-rl;
+    /* TODO: check for a better way to show text */
+  }
+
+  .beerBar {
+    width: 20px;
+    height: 160px;
+    border-radius: 5px;
+  }
+
+  .beerBarProgress {
+    font-size: 10px;
+    margin-top: 20px;
+  }
+  .firstBeer {
+    margin-left: 10px;
+  }
+
+
+  /* ===== Orders Styling ===== */
+  .clocks {
+    display: block;
+    margin: 0px 0px 0px 13px;
+
+  }
+  .clock1 {
+    margin-top: 0px;
+    margin-right: 0px;
+  }
+  .clock2 {
+    margin-top: 0px;
+  }
+
+  /* Circle progress bar */
+  .circular {
+    height: 100px;
+    width: 100px;
+    transform: scale(0.8);
+  }
+  .inner {
+    height: 80px;
+    width: 80px;
+  }
+  .circleTime {
+    font-size: 18px;
+  }
+  .circleNumber {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  /* ===== Containers Styling ===== */
+  .titleForContainer {
+    font-size: 21px;
+  }
+
+  .seeAllButton {
+    border-radius: 25px;
+    padding: 5px 10px 5px 10px;
+    font-size: 13px;
+  }
+
+  /* ===== Bartenders Styling ===== */
+  /* Numbers */
+  .bartenderNumber {
+    font-size: 18px;
+  }
+
+  /* Photos */
+  .photoBartender {
+    height: 50px;
+    width: 50px;
+    margin: 6px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Names */
+  .name {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .action {
+    font-size: 13px;
+  }
+
+  /* Container IDs for individual styling */
+  #bartenderContainer {
+    margin-left: 20px;
+    margin-top: 30px;
+    width: 320px;
+    height: 280px;
+  }
+
+  #storageContainer {
+    margin-top: 30px;
+    margin-right: 30px;
+    width: 320px;
+    height: 280px;
+  }
+
+  #remainingTapContainer {
+    margin-left: 20px;
+    height: 280px;
+    width: 480px;
+  }
+
+  #ordersContainer {
+    margin-right: 30px;
+    height: 280px;
+    width: 180px;
+  }
+
+  /* ===== Storage Styling ===== */
+  .tableContent {
+    margin-top: 80px;
+  }
+
+  .storageTable thead {
+    font-size: 15px;
+  }
+
+  .productClass {
+    font-size: 16px;
+  }
+
+
+  .quantityClass {
+    font-size: 16px;
+  }
+
+  .statusClass {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .statusArea {
+    border-radius: 30px;
+    padding: 3px 10px 3px 10px;
+    width: 80px;
+    margin: auto;
+  }
+
+  /* ===== Remaining Tap Styling ===== */
+  /* Progress bar style */
+  .barAndName {
+    height: auto;
+    width: 50px;
+    margin-right: 18px;
+  }
+
+  .beerName {
+    font-size: 18px;
+    /* text-orientation: upright; */
+    /* TODO: uncomment this for the better way */
+    writing-mode: vertical-rl;
+    /* TODO: check for a better way to show text */
+  }
+
+  .beerBar {
+    width: 23px;
+    height: 200px;
+    border-radius: 5px;
+  }
+
+  .beerBarProgress {
+    font-size: 10px;
+    margin-top: 20px;
+  }
+  .firstBeer {
+    margin-left: 22px;
+  }
+
+
+  /* ===== Orders Styling ===== */
+  .clocks {
+    display: block;
+    margin: 50px 50px 50px 45px;
+
+  }
+  .clock1 {
+    margin-top: 60px;
+    margin-right: 90px;
+  }
+  .clock2 {
+    margin-top: 15px;
+  }
+
+  /* Circle progress bar */
+  .circular {
+    height: 100px;
+    width: 100px;
+    transform: scale(1);
+  }
+  .inner {
+    height: 80px;
+    width: 80px;
+  }
+  .circleTime {
+    font-size: 18px;
+  }
+  .circleNumber {
+    font-size: 14px;
+  }
+}
+
+
+@media only screen and (min-width: 1201px) and (max-width: 1440px) {
+  /* ===== Containers Styling ===== */
+  .titleForContainer {
+    font-size: 23px;
+  }
+
+  /* ===== Bartenders Styling ===== */
+  /* Numbers */
+  .bartenderNumber {
+    font-size: 20px;
+  }
+
+  /* Photos */
+  .photoBartender {
+    height: 55px;
+    width: 55px;
+    margin: 7px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Names */
+  .name {
+    font-size: 22px;
+    text-align: left;
+  }
+
+  .action {
+    font-size: 15px;
+  }
+
+  /* Container IDs for individual styling */
+  #bartenderContainer {
+    margin-left: 30px;
+    margin-top: 40px;
+    width: 400px;
+    height: 300px;
+  }
+
+  #storageContainer {
+    margin-top: 40px;
+    margin-right: 40px;
+    width: 400px;
+    height: 300px;
+  }
+
+  #remainingTapContainer {
+    margin-left: 30px;
+    height: 300px;
+    width: 550px;
+  }
+
+  #ordersContainer {
+    margin-right: 40px;
+    height: 300px;
+    width: 250px;
+  }
+
+  /* ===== Storage Styling ===== */
+  .tableContent {
+    margin-top: 80px;
+  }
+
+  .storageTable thead {
+    font-size: 18px;
+  }
+
+  .productClass {
+    font-size: 21px;
+  }
+
+
+  .quantityClass {
+    font-size: 20px;
+  }
+
+  .statusClass {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .statusArea {
+    border-radius: 30px;
+    padding: 3px 10px 3px 10px;
+    width: 100px;
+    margin: auto;
+  }
+
+  /* ===== Remaining Tap Styling ===== */
+  /* Progress bar style */
+  .barAndName {
+    height: auto;
+    width: 50px;
+    margin-right: 20px;
+  }
+
+  .beerName {
+    font-size: 18px;
+    /* text-orientation: upright; */
+    /* TODO: uncomment this for the better way */
+    writing-mode: vertical-rl;
+    /* TODO: check for a better way to show text */
+  }
+
+  .beerBar {
+    width: 25px;
+    height: 200px;
+    border-radius: 5px;
+  }
+
+  .beerBarProgress {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+  .firstBeer {
+    margin-left: 22px;
+  }
+
+
+  /* ===== Orders Styling ===== */
+  .clocks {
+    display: block;
+    margin: 50px 50px 50px 80px;
+
+  }
+  .clock1 {
+    margin-top: 60px;
+    margin-right: 90px;
+  }
+  .clock2 {
+    margin-top: 30px;
+  }
+
+  /* Circle progress bar */
+  .circular {
+    height: 100px;
+    width: 100px;
+    transform: scale(1.2);
+  }
+  .inner {
+    height: 80px;
+    width: 80px;
+  }
+  .circleTime {
+    font-size: 18px;
+  }
+  .circleNumber {
+    font-size: 14px;
+  }
+
+
+}
+
+@media only screen and (min-width: 1441px) and (max-width: 1900px) {
+  /* ===== Containers Styling ===== */
+  .titleForContainer {
+    font-size: 30px;
+  }
+
+  /* ===== Bartenders Styling ===== */
+  /* Numbers */
+  .bartenderNumber {
+    font-size: 25px;
+  }
+
+  /* Photos */
+  .photoBartender {
+    height: 60px;
+    width: 60px;
+    margin: 8px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Names */
+  .name {
+    font-size: 26px;
+    text-align: left;
+  }
+
+  .action {
+    font-size: 18px;
+  }
+
+  /* Container IDs for individual styling */
+  #bartenderContainer {
+    margin-left: 50px;
+    margin-top: 40px;
+    width: 500px;
+    height: 330px;
+  }
+
+  #storageContainer {
+    margin-top: 40px;
+    margin-right: 40px;
+    width: 500px;
+    height: 330px;
+  }
+
+  #remainingTapContainer {
+    margin-left: 50px;
+    height: 310px;
+    width: 650px;
+  }
+
+  #ordersContainer {
+    margin-right: 40px;
+    height: 310px;
+    width: 350px;
+  }
+
+  /* ===== Storage Styling ===== */
+  .tableContent {
+    margin-top: 80px;
+  }
+
+  .storageTable thead {
+    font-size: 20px;
+  }
+
+  .productClass {
+    font-size: 25px;
+  }
+
+
+  .quantityClass {
+    font-size: 22px;
+  }
+
+  .statusClass {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .statusArea {
+    border-radius: 30px;
+    padding: 3px 10px 3px 10px;
+    width: 120px;
+    margin: auto;
+  }
+
+  /* ===== Remaining Tap Styling ===== */
+  /* Progress bar style */
+  .barAndName {
+    height: auto;
+    width: 50px;
+    margin-right: 35px;
+  }
+
+  .beerName {
+    font-size: 20px;
+    /* text-orientation: upright; */
+    /* TODO: uncomment this for the better way */
+    writing-mode: vertical-rl;
+    /* TODO: check for a better way to show text */
+  }
+
+  .beerBar {
+    width: 25px;
+    height: 230px;
+    border-radius: 5px;
+  }
+
+  .beerBarProgress {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+
+  .firstBeer {
+    margin-left: 22px;
+  }
+
+
+  /* ===== Orders Styling ===== */
+  .clocks {
+    display: flex;
+    margin: 40px;
+  }
+  .clock1 {
+    margin-top: 90px;
+    margin-right: 80px;
+  }
+  .clock2 {
+    margin-top: 90px;
+  }
+
+  /* Circle progress bar */
+  .circular {
+    height: 100px;
+    width: 100px;
+    transform: scale(1.5);
+  }
+  .inner {
+    height: 80px;
+    width: 80px;
+  }
+  .circleTime {
+    font-size: 20px;
+  }
+  .circleNumber {
+    font-size: 15px;
+  }
 }
