@@ -674,10 +674,7 @@ main {
     font-size: 35px;
     width: auto;
     height: auto;
-    /* text-orientation: upright; */
-    /* TODO: uncomment this for the better way */
     writing-mode: vertical-rl;
-    /* TODO: check for a better way to show text */
   }
 
   .beerBar {
@@ -702,9 +699,6 @@ main {
     border-top: 1px solid var(--shadow-color);
     border-radius: 5px;
     margin-top: 20px;
-  }
-  .firstBeer {
-    /* margin-left: 22px; */
   }
 
   /* ===== Orders Styling ===== */
@@ -739,12 +733,6 @@ main {
 }
 
 @media only screen and (min-width: 769px) and (max-width: 992px) {
-  /* main {
-    position: absolute;
-    height: 100vh;
-    width: 88vw;
-  } */
-
   /* ===== Containers Styling ===== */
   .titleForContainer {
     font-size: 18px;
@@ -866,10 +854,7 @@ main {
 
   .beerName {
     font-size: 12px;
-    /* text-orientation: upright; */
-    /* TODO: uncomment this for the better way */
     writing-mode: vertical-rl;
-    /* TODO: check for a better way to show text */
   }
 
   .beerBar {
@@ -1025,10 +1010,7 @@ main {
 
   .beerName {
     font-size: 18px;
-    /* text-orientation: upright; */
-    /* TODO: uncomment this for the better way */
     writing-mode: vertical-rl;
-    /* TODO: check for a better way to show text */
   }
 
   .beerBar {
@@ -1178,10 +1160,7 @@ main {
 
   .beerName {
     font-size: 18px;
-    /* text-orientation: upright; */
-    /* TODO: uncomment this for the better way */
     writing-mode: vertical-rl;
-    /* TODO: check for a better way to show text */
   }
 
   .beerBar {
@@ -1331,10 +1310,7 @@ main {
 
   .beerName {
     font-size: 20px;
-    /* text-orientation: upright; */
-    /* TODO: uncomment this for the better way */
     writing-mode: vertical-rl;
-    /* TODO: check for a better way to show text */
   }
 
   .beerBar {

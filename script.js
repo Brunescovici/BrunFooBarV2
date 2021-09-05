@@ -30,7 +30,9 @@ const product3 = document.getElementById("product3");
 const quantity3 = document.getElementById("quantity3");
 const status3 = document.getElementById("status3");
 // Remaining Tap IDs
-const remainingTapContainer = document.getElementById("remainingTapBeerContainer");
+const remainingTapContainer = document.getElementById(
+  "remainingTapBeerContainer"
+);
 const beerBar = document.querySelector(".beerBar");
 // Order IDs
 const ordersContainer = document.getElementById("ordersContainer");
@@ -46,137 +48,151 @@ const tapBeerTemplate = document.getElementById("tapBeerTemplate");
 const clockTemplate = document.getElementById("clockTemplate");
 
 //Event Listeners
-navBurgerButton.addEventListener('click', expandRetractNav);
-profileNavElement.addEventListener('click', expandRetractNav);
-calendarNavElement.addEventListener('click', expandRetractNav);
-dashboardNavElement.addEventListener('click', expandRetractNav);
+navBurgerButton.addEventListener("click", expandRetractNav);
+profileNavElement.addEventListener("click", expandRetractNav);
+calendarNavElement.addEventListener("click", expandRetractNav);
+dashboardNavElement.addEventListener("click", expandRetractNav);
 
 window.onresize = reportWindowSize;
 
-window.addEventListener('load', function () {
-    let fetchInterval = 1000;
+window.addEventListener("load", function () {
+  let fetchInterval = 1000;
 
-    setInterval(fetchFct, fetchInterval);
-  });
+  setInterval(fetchFct, fetchInterval);
+});
 
 function fetchFct() {
-    fetch("https://brunfoobar.herokuapp.com/")
-        .then((response) => response.json())
-        .then((data) => updateData(data));
+  fetch("https://brunfoobar.herokuapp.com/")
+    .then((response) => response.json())
+    .then((data) => updateData(data));
 }
 
-let i = 0, barSize = 0, navExpand = 0; // number to count the bartenders and give them an id
+let i = 0,
+  barSize = 0,
+  navExpand = 0; // number to count the bartenders and give them an id, and a bool to check if the nav is expanded or not
 let time = 0; //number to count the time elapsed from when the order was taken
 let beersArray = []; //arrays
 
-function updateData(x) {    // x is the data got from the database
-    i=0;
-    x.bartenders.forEach(el => {
-        if(el.status == "WORKING")
-          document.querySelector("#bartender" + i + " .action").textContent = bartenderStatus(el.statusDetail);
-        else
-          document.querySelector("#bartender" + i + " .action").textContent = "waiting for orders";
-        i++;
-    })
-    beersArray = [];
-    x.storage.forEach(el => {
-      beersArray.push(el);
-    })
-    while (storageBeerContainer.firstChild) {
-      storageBeerContainer.removeChild(storageBeerContainer.lastChild);
-    }
-    showBeersInStorage();
-    i=0;
-    x.taps.forEach(el => {
-      barSize = el.level / el.capacity * 100;
-      document.getElementById("progress" + i).style.height = barSize + "%";
-      document.getElementById("progress" + i).textContent = Math.floor(barSize) + "%";
-    i++;
-    })
-    while (clockContainer.firstChild) {
-      clockContainer.removeChild(clockContainer.lastChild);
-    }
-    i=0;
-    x.queue.forEach(el => {
-      let clone = clockTemplate.content.cloneNode(true);
-    time = (x.timestamp - el.startTime)/1000;
-    time = Math.floor(time);
-    if(time>=720)
-        clone.querySelector(".circleBar").background = "red";
-    if(time<=360)
-    clone.querySelector(".leftCircle .circleProgress").style.transform = "rotate(" + time/2 + "deg)";
-    else if(time>360 && time <=720) {
-      clone.querySelector(".leftCircle .circleProgress").style.transform = "rotate(180deg)";
-      clone.querySelector(".rightCircle .circleProgress").style.transform = "rotate(" + (time-360)/2 + "deg)";
-    }
-    else {
-      clone.querySelector(".leftCircle .circleProgress").style.transform = "rotate(180deg)";
-      clone.querySelector(".rightCircle .circleProgress").style.transform = "rotate(180deg)";
-    }
-    if(time%60>9)
-      clone.getElementById("clockTime").textContent = Math.floor(time/60) + ":" + time%60;
+function updateData(x) {
+  // x is the data got from the database
+  i = 0;
+  x.bartenders.forEach((el) => {
+    if (el.status == "WORKING")
+      document.querySelector("#bartender" + i + " .action").textContent =
+        bartenderStatus(el.statusDetail);
     else
-      clone.getElementById("clockTime").textContent = Math.floor(time/60) + ":0" + time%60;
+      document.querySelector("#bartender" + i + " .action").textContent =
+        "waiting for orders";
+    i++;
+  });
+  beersArray = [];
+  x.storage.forEach((el) => {
+    beersArray.push(el);
+  });
+  while (storageBeerContainer.firstChild) {
+    storageBeerContainer.removeChild(storageBeerContainer.lastChild);
+  }
+  showBeersInStorage();
+  i = 0;
+  x.taps.forEach((el) => {
+    barSize = (el.level / el.capacity) * 100;
+    document.getElementById("progress" + i).style.height = barSize + "%";
+    document.getElementById("progress" + i).textContent =
+      Math.floor(barSize) + "%";
+    i++;
+  });
+  while (clockContainer.firstChild) {
+    clockContainer.removeChild(clockContainer.lastChild);
+  }
+  i = 0;
+  x.queue.forEach((el) => {
+    let clone = clockTemplate.content.cloneNode(true);
+    time = (x.timestamp - el.startTime) / 1000;
+    time = Math.floor(time);
+    if (time >= 720) clone.querySelector(".circleBar").background = "red";
+    if (time <= 360)
+      clone.querySelector(".leftCircle .circleProgress").style.transform =
+        "rotate(" + time / 2 + "deg)";
+    else if (time > 360 && time <= 720) {
+      clone.querySelector(".leftCircle .circleProgress").style.transform =
+        "rotate(180deg)";
+      clone.querySelector(".rightCircle .circleProgress").style.transform =
+        "rotate(" + (time - 360) / 2 + "deg)";
+    } else {
+      clone.querySelector(".leftCircle .circleProgress").style.transform =
+        "rotate(180deg)";
+      clone.querySelector(".rightCircle .circleProgress").style.transform =
+        "rotate(180deg)";
+    }
+    if (time % 60 > 9)
+      clone.getElementById("clockTime").textContent =
+        Math.floor(time / 60) + ":" + (time % 60);
+    else
+      clone.getElementById("clockTime").textContent =
+        Math.floor(time / 60) + ":0" + (time % 60);
     i++;
     clone.getElementById("clock").classList.add("clock" + i);
     clone.getElementById("clockNumber").textContent = "#" + el.id;
-    if(i >= 3)
-      clone.getElementById("clock").style.display = "none";
+    if (i >= 3) clone.getElementById("clock").style.display = "none";
     clockContainer.appendChild(clone);
-    })
+  });
 }
 
-function workData(x) { // x is the data got from the database
+function workData(x) {
+  // x is the data got from the database
   console.log(x);
   // document.getElementById("barName").textContent = x.bar.name;
-  x.bartenders.forEach(el => {
+  x.bartenders.forEach((el) => {
     let clone = bartenderTemplate.content.cloneNode(true);
     clone.querySelector(".bartendersRow").id = "bartender" + i;
     clone.querySelector(".name").textContent = el.name;
-    if(el.status == "WORKING")
-      clone.querySelector(".action").textContent = bartenderStatus(el.statusDetail);
-    else
-      clone.querySelector(".action").textContent = "waiting for orders";
+    if (el.status == "WORKING")
+      clone.querySelector(".action").textContent = bartenderStatus(
+        el.statusDetail
+      );
+    else clone.querySelector(".action").textContent = "waiting for orders";
     i++;
     clone.querySelector(".bartenderNumber").textContent = "#" + i;
-    clone.querySelector(".photoBartender").src = "bartenderPics/bartender" + i + ".jpg";
+    clone.querySelector(".photoBartender").src =
+      "bartenderPics/bartender" + i + ".jpg";
     bartenderContainer.appendChild(clone);
   });
-  x.storage.forEach(el => {
+  x.storage.forEach((el) => {
     beersArray.push(el);
-  })
+  });
   showBeersInStorage();
-  i=0;
-  x.taps.forEach(el => {
+  i = 0;
+  x.taps.forEach((el) => {
     let clone = tapBeerTemplate.content.cloneNode(true);
     clone.querySelector(".beerName").textContent = '"' + el.beer + '"';
     clone.querySelector(".beerBarProgress").id = "progress" + i;
-    if(i==0) {
+    if (i == 0) {
       clone.querySelector(".barAndName").classList.add("firstBeer");
     }
-    barSize = el.level / el.capacity * 100;
+    barSize = (el.level / el.capacity) * 100;
     clone.querySelector(".beerBarProgress").style.height = barSize + "%";
-    clone.querySelector(".beerBarProgress").textContent = Math.floor(barSize) + "%";
+    clone.querySelector(".beerBarProgress").textContent =
+      Math.floor(barSize) + "%";
     i++;
     remainingTapContainer.appendChild(clone);
-  })
-  i=0;
-  x.queue.forEach(el => {
+  });
+  i = 0;
+  x.queue.forEach((el) => {
     let clone = clockTemplate.content.cloneNode(true);
-    time = (x.timestamp - el.startTime)/1000;
+    time = (x.timestamp - el.startTime) / 1000;
     time = Math.floor(time);
-    if(time%60>9)
-      clone.getElementById("clockTime").textContent = Math.floor(time/60) + ":" + time%60;
+    if (time % 60 > 9)
+      clone.getElementById("clockTime").textContent =
+        Math.floor(time / 60) + ":" + (time % 60);
     else
-      clone.getElementById("clockTime").textContent = Math.floor(time/60) + ":0" + time%60;
+      clone.getElementById("clockTime").textContent =
+        Math.floor(time / 60) + ":0" + (time % 60);
     i++;
     clone.getElementById("clock").classList.add("clock" + i);
     clone.getElementById("clockNumber").textContent = "#" + el.id;
-    if(i >= 3)
-      clone.getElementById("clock").style.display = "none";
+    if (i >= 3) clone.getElementById("clock").style.display = "none";
     clockContainer.appendChild(clone);
-  })
-  
+  });
 }
 
 fetch("https://brunfoobar.herokuapp.com/")
@@ -186,66 +202,57 @@ fetch("https://brunfoobar.herokuapp.com/")
 // Bartenders Scripts
 
 function bartenderStatus(stat) {
-  if(stat == "pourBeer")
-    return "is pouring beer";
-  if(stat == "startServing")
-    return "starts serving";
-  if(stat == "receivePayment")
-    return "receives the payment"
-  if(stat == "releaseTap")
-    return "releases the tap"
-  if(stat == "reserveTap")
-    return "reserves the tap"
-  if(stat == "replaceKeg")
-    return "replaces the keg"
+  if (stat == "pourBeer") return "is pouring beer";
+  if (stat == "startServing") return "starts serving";
+  if (stat == "receivePayment") return "receives the payment";
+  if (stat == "releaseTap") return "releases the tap";
+  if (stat == "reserveTap") return "reserves the tap";
+  if (stat == "replaceKeg") return "replaces the keg";
 }
 
-// Storage Scripts 
+// Storage Scripts
 
 function compareNumbers(a, b) {
-  return a.amount-b.amount;
+  return a.amount - b.amount;
 }
 
 function showBeersInStorage() {
   beersArray.sort(compareNumbers);
-  i=0;
-  beersArray.forEach(el => {
+  i = 0;
+  beersArray.forEach((el) => {
     let clone = storageBeerTemplate.content.cloneNode(true);
     clone.querySelector("tr").id = "row" + i;
     clone.querySelector(".productClass").textContent = '"' + el.name + '"';
     clone.querySelector(".quantityClass").textContent = el.amount;
-    if(el.amount >= 6) {
+    if (el.amount >= 6) {
       clone.querySelector(".statusArea").textContent = "In stock";
       clone.querySelector(".statusArea").classList.add("onStock");
-    }
-    else if(el.amount >= 3) {
+    } else if (el.amount >= 3) {
       clone.querySelector(".statusArea").textContent = "Low stock";
       clone.querySelector(".statusArea").classList.add("lowStock");
-    }
-    else {
+    } else {
       clone.querySelector(".statusArea").textContent = "Critically low";
       clone.querySelector(".statusArea").classList.add("criticallyLow");
     }
-    if(i>=5) {
+    if (i >= 5) {
       clone.getElementById("row" + i).style.display = "none";
     }
     i++;
     storageBeerContainer.appendChild(clone);
-  })
+  });
 }
 
 // Navigation Script
 
-
-navDashboard.addEventListener('click', function () {
+navDashboard.addEventListener("click", function () {
   selectItem("dash");
 });
-navProfile.addEventListener('click', function () {
+navProfile.addEventListener("click", function () {
   selectItem("profile");
 });
-navCalendar.addEventListener('click', function () {
+navCalendar.addEventListener("click", function () {
   selectItem("calendar");
-})
+});
 
 function selectItem(x) {
   navDashboard.classList.remove("selectedNavItem");
@@ -253,35 +260,30 @@ function selectItem(x) {
   navCalendar.classList.remove("selectedNavItem");
   if (x == "dash") {
     navDashboard.classList.add("selectedNavItem");
-  }
-  else if (x == "profile") {
+  } else if (x == "profile") {
     navProfile.classList.add("selectedNavItem");
-  }
-  else {
+  } else {
     navCalendar.classList.add("selectedNavItem");
   }
 }
 
 function reportWindowSize() {
-  if(window.innerWidth >= 768) {
+  if (window.innerWidth >= 768) {
     navList.style.display = "block";
     navBGMobile.style.height = "100px";
-  }
-  else if(!navExpand) {
+  } else if (!navExpand) {
     navList.style.display = "none";
   }
 }
 
 function expandRetractNav() {
-  
-  if(!navExpand && window.innerWidth <= 768) {
+  if (!navExpand && window.innerWidth <= 768) {
     navBGMobile.style.height = "100vh";
     navList.style.display = "block";
-    navExpand=1;
-  }
-  else if(navExpand && window.innerWidth <= 768) {
+    navExpand = 1;
+  } else if (navExpand && window.innerWidth <= 768) {
     navBGMobile.style.height = "100px";
     navList.style.display = "none";
-    navExpand=0;
+    navExpand = 0;
   }
 }
